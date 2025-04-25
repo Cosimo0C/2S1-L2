@@ -15,7 +15,45 @@ body {
 hr {
   display: none;
 } /* rimuove l'elemento */
-
+.button-fixed1,
+.button-fixed2,
+.button-fixed3 {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5%;
+  border: solid 2px white;
+  border-radius: 20%;
+  background-color: rgba(255, 255, 255, 0.258);
+  font-size: 25px;
+  right: -12px;
+  cursor: pointer;
+}
+.button-fixed1 {
+  bottom: 0;
+}
+.button-fixed2 {
+  bottom: 7%;
+}
+.button-fixed3 {
+  bottom: 14%;
+}
+@media screen and (min-width: 1199px) {
+  .button-fixed1,
+  .button-fixed2,
+  .button-fixed3 {
+    padding: 0;
+  }
+  .button-fixed1 {
+    bottom: 0;
+  }
+  .button-fixed2 {
+    top: 2%;
+  }
+  .button-fixed3 {
+    top: 8%;
+  }
+}
 /* HEADER */
 header {
   background: rgb(0, 160, 198);
@@ -27,11 +65,11 @@ header {
   box-shadow: 0 3px 3px #444;
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: sticky;
   top: 0;
-  z-index: 999;
+  right: 0;
+  left: 0;
+  z-index: 10;
 }
 
 @media screen and (min-width: 800px) {
@@ -125,7 +163,12 @@ article h1 span img {
   bottom: -18px;
   width: 100%;
 }
-
+.img-html {
+  float: left;
+  border: 4px solid #00a0c6;
+  outline: 4px solid #a02571;
+  margin-right: 10px;
+}
 section {
   background-color: #e3e3e3;
   padding: 1.5em 1em;
@@ -136,11 +179,18 @@ section {
 section h2 {
   text-align: center;
   color: #333;
-  font-size: 1.4rem;
+  font-size: 1.9rem;
   margin-bottom: 1.7rem;
   font-weight: bold;
   background-color: #a3a3a3;
   padding: 0px 1em;
+  position: absolute;
+  top: -22px;
+  width: 33%;
+  box-shadow: 2px 2px 4px;
+}
+section p {
+  padding-top: 10px;
 }
 
 /* ELEMENTI NEL MAIN - ARTICLE */
@@ -342,8 +392,16 @@ aside div {
   border: 1px solid #c3c3c3;
   margin-bottom: 1em;
   padding: 1em;
+  position: relative;
 }
-
+#tag {
+  position: absolute;
+  color: rgba(184, 184, 184, 0.534);
+  font-size: 60px;
+  right: 0;
+  top: 0;
+  padding: 1rem;
+}
 @media screen and (min-width: 1200px) {
   aside div {
     display: inline-block;
